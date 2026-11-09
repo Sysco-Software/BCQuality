@@ -12,6 +12,7 @@
   "overrides": {
     "appsource": {
       "articles": [
+        "define-profiles-as-al-objects",
         "permission-sets-cover-setup-and-usage-without-super",
         "file-datatype-saas"
       ]
