@@ -3,32 +3,53 @@
   "selection": "first-paired-al-article",
   "minimumExpectedRecall": 1.0,
   "minimumCleanRate": 1.0,
-  "coverageWaivers": [],
+  "coverageWaivers": [
+    {
+      "path": "microsoft/knowledge/style/al-identifiers-english.md",
+      "reason": "The style leaf does not retrieve this article in its deterministic candidate ranking."
+    }
+  ],
   "overrides": {
+    "appsource": {
+      "articles": [
+        "permission-sets-cover-setup-and-usage-without-super",
+        "file-datatype-saas"
+      ]
+    },
     "agents": {
       "article": "wire-all-three-agent-interfaces"
     },
     "breaking-changes": {
-      "article": "do-not-expose-sensitive-data-through-public-api"
+      "articles": [
+        "do-not-expose-sensitive-data-through-public-api",
+        "prefer-email-module"
+      ]
     },
     "data-modeling": {
       "articles": [
         "activate-new-price-calculation-handler-via-onfindsupportedsetup",
         "check-blocked-in-referencing-code-not-in-master",
+        "check-post-line-batch-pattern",
         "code-must-not-change-workdate",
         "custom-document-dispatch-must-not-bypass-report-selections",
         "delete-master-data-with-trigger",
+        "dimension-management-wiring",
+        "do-not-change-primary-key",
         "document-line-prices-follow-prices-including-vat",
         "document-print-and-email-actions-call-report-selections-directly",
         "extend-find-entries-navigate-for-new-document-types",
         "extend-price-source-type-must-sync-document-subset-enum",
         "extend-report-selection-usage-for-new-document-types",
+        "initialize-document-defaults-in-initrecord",
+        "item-ledger-entry-document-no-follows-last-shipping-no",
         "master-data-must-be-inserted-with-trigger",
         "new-price-source-must-add-candidate-and-trigger-recalculation",
         "pictures-must-use-media-not-blob",
         "report-barcodes-must-use-barcode-module-and-production-font-name",
+        "round-direction-symbols-use-magnitude",
         "table-design-must-match-bc-table-type-conventions",
         "tablerelation-field-length-must-match-related-field",
+        "testfield-required-setup-field",
         "transferfields-mirrored-fields-must-match-type-and-length"
       ]
     },
@@ -62,7 +83,10 @@
       "context": "Target Business Central 28, worldwide standard application (w1). Review each file as an independent source input."
     },
     "interfaces": {
-      "article": "set-defaultimplementation-on-enum"
+      "articles": [
+        "set-defaultimplementation-on-enum",
+        "guard-interface-casts-with-is"
+      ]
     },
     "performance": {
       "articles": [
@@ -91,6 +115,7 @@
         "prefer-modifyall-over-per-row-modify",
         "al-methods-limited-during-write-transactions",
         "avoid-user-prompts-inside-transactions",
+        "document-report-word-layout",
         "use-grouped-query-for-distinct-values-and-duplicates"
       ]
     },
@@ -140,7 +165,8 @@
       "articles": [
         "al-has-no-built-in-htmlencode",
         "do-not-concatenate-external-text-into-setfilter",
-        "exposed-objects-must-be-in-a-permission-set"
+        "exposed-objects-must-be-in-a-permission-set",
+        "indirect-permissions-for-elevated-access"
       ]
     },
     "style": {
@@ -149,7 +175,12 @@
         "dateformula-evaluate-needs-language-independent-literals",
         "al-comments-must-not-restate-what-code-already-shows",
         "pages-must-not-contain-business-logic",
-        "mutating-procedure-for-a-page-caller-takes-var-record"
+        "mutating-procedure-for-a-page-caller-takes-var-record",
+        "binary-choice-must-be-boolean",
+        "fixed-choice-set-must-use-enum-not-integer",
+        "intrinsic-al-functions-must-use-modern-casing",
+        "namespace-must-be-verified-from-source",
+        "var-parameters-require-an-addressable-variable"
       ]
     },
     "telemetry": {
@@ -169,7 +200,11 @@
         "transactionmodel-attribute-governs-test-transactions",
         "ui-test-codeunit-naming",
         "use-assert-isfalse-not-asserterror-for-boolean-checks",
-        "recordref-open-temp-parameter-defeats-real-table-checks"
+        "recordref-open-temp-parameter-defeats-real-table-checks",
+        "test-data-must-be-random-and-complete",
+        "use-generateguid-for-unique-test-fixture-values",
+        "use-testpage-editable-to-verify-field-editability",
+        "use-testpage-visible-enabled-to-verify-field-ui-state"
       ]
     },
     "ui": {
@@ -179,14 +214,17 @@
         "page-client-expression-must-not-use-in-list",
         "rolecenter-permission-gating-must-use-accessbypermission",
         "notification-recall-needs-known-id",
-        "list-page-document-routing-uses-page-management"
+        "list-page-document-routing-uses-page-management",
+        "dropdown-fieldgroup-respects-lookup-page-visibility",
+        "updatepropagation-both-refreshes-main-page"
       ]
     },
     "upgrade": {
       "articles": [
         "initvalue-does-not-update-existing-rows",
         "upgrade-tag-logic-must-not-nest-deeply",
-        "no-changecompany-in-upgrade"
+        "no-changecompany-in-upgrade",
+        "install-and-upgrade-codeunits-have-no-order"
       ],
       "context": "The extended table existed in the previous app version and already contains rows."
     },
@@ -197,7 +235,9 @@
         "check-http-status-before-consuming-response-body",
         "check-json-null-before-converting-values",
         "format-exchanged-values-with-standard-format-9",
-        "api-page-least-privilege-write-access"
+        "api-page-least-privilege-write-access",
+        "api-page-key-fields-must-be-editable-on-insert",
+        "stored-derived-fields-must-not-be-exposed-directly"
       ]
     }
   }
